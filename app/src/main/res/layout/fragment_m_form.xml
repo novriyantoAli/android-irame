@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.menu.MFormFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/contentBodyColor">
+
+        <LinearLayout
+            android:id="@+id/ll_package"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin">
+
+            <Spinner
+                android:id="@+id/spn_package"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/black_transparent_outline"
+                android:popupBackground="@color/colorPrimaryDark"/>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_validity_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false" />
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_validity_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"/>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"/>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/ll_package"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+            <Spinner
+                android:id="@+id/spn_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_transparent_outline"
+                android:spinnerMode="dropdown"
+                android:popupBackground="@color/colorPrimaryDark"/>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"/>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/edt_priority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+        <EditText
+            style="@style/AppTheme.EditText"
+            android:id="@+id/edt_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/title_name"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:layout_constraintTop_toBottomOf="@+id/ll_profile"
+            app:layout_constraintStart_toStartOf="@id/ll_profile"
+            app:layout_constraintEnd_toEndOf="@id/ll_profile"/>
+
+        <Button
+            style="@style/AppTheme.Button"
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/title_save"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/edt_name"
+            app:layout_constraintStart_toStartOf="@id/ll_profile"
+            app:layout_constraintEnd_toEndOf="@id/ll_profile"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

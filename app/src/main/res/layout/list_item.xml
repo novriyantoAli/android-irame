@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_vertical_margin">
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_transaction_code"
+        android:layout_width="150dp"
+        android:text="@string/title_transaction_code"
+        android:layout_height="wrap_content"
+        android:paddingStart="?android:attr/expandableListPreferredChildPaddingLeft"
+        android:paddingEnd="?android:attr/expandableListPreferredChildIndicatorRight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_transaction_code_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="ini adalah text yang sangant panjang sehingga membutuhkan raungan yang begitu besar dalam penyimpanan"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@id/tv_transaction_code"
+        app:layout_constraintStart_toEndOf="@+id/tv_transaction_code"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_status"
+        android:layout_marginTop="5dp"
+        android:paddingStart="?android:attr/expandableListPreferredChildPaddingLeft"
+        android:paddingEnd="?android:attr/expandableListPreferredChildIndicatorRight"
+        app:layout_constraintTop_toBottomOf="@id/tv_transaction_code_value"
+        app:layout_constraintStart_toStartOf="@id/tv_transaction_code"
+        app:layout_constraintEnd_toEndOf="@id/tv_transaction_code"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_status_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="this for value"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@+id/tv_status"
+        app:layout_constraintStart_toEndOf="@+id/tv_status"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_value"
+        android:layout_marginTop="5dp"
+        android:paddingStart="?android:attr/expandableListPreferredChildPaddingLeft"
+        android:paddingEnd="?android:attr/expandableListPreferredChildIndicatorRight"
+        app:layout_constraintTop_toBottomOf="@id/tv_status_value"
+        app:layout_constraintStart_toStartOf="@id/tv_status"
+        app:layout_constraintEnd_toEndOf="@id/tv_status"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_value_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="10000"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@+id/tv_value"
+        app:layout_constraintStart_toEndOf="@+id/tv_value"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_information"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_information"
+        android:layout_marginTop="5dp"
+        android:paddingStart="?android:attr/expandableListPreferredChildPaddingLeft"
+        android:paddingEnd="?android:attr/expandableListPreferredChildIndicatorRight"
+        app:layout_constraintTop_toBottomOf="@id/tv_value_value"
+        app:layout_constraintStart_toStartOf="@id/tv_value"
+        app:layout_constraintEnd_toEndOf="@id/tv_value"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_information_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@+id/tv_information"
+        app:layout_constraintStart_toEndOf="@+id/tv_information"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_created_at"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_created"
+        android:layout_marginTop="5dp"
+        android:paddingStart="?android:attr/expandableListPreferredChildPaddingLeft"
+        android:paddingEnd="?android:attr/expandableListPreferredChildIndicatorRight"
+        app:layout_constraintTop_toBottomOf="@id/tv_information_value"
+        app:layout_constraintStart_toStartOf="@id/tv_information"
+        app:layout_constraintEnd_toEndOf="@id/tv_information"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_created_at_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@+id/tv_created_at"
+        app:layout_constraintStart_toEndOf="@+id/tv_created_at"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

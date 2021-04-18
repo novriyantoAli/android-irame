@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.PRFormFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <RadioGroup
+            android:id="@+id/rg_hotspot_or_pppoe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/radio_btn_hotspot"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:layout_constraintStart_toStartOf="@id/et_profile"
+            app:layout_constraintEnd_toEndOf="@+id/et_profile"
+            app:layout_constraintTop_toTopOf="parent">
+            <RadioButton android:id="@+id/radio_btn_hotspot"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_hotspot" />
+            <RadioButton android:id="@+id/radio_btn_pppoe"
+                style="@style/AppTheme.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_pppoe" />
+        </RadioGroup>
+
+        <EditText
+            style="@style/AppTheme.EditText"
+            android:id="@+id/et_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/hint_profile"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toBottomOf="@id/rg_hotspot_or_pppoe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            style="@style/AppTheme.EditText"
+            android:id="@+id/et_priority"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_priority"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toBottomOf="@id/et_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_limit_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/contentTextColor"
+            android:text="@string/title_limit_user"
+            android:drawableStart="@drawable/ic_baseline_share_24"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:layout_constraintTop_toBottomOf="@id/et_priority"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            style="@style/AppTheme.EditText"
+            android:id="@+id/et_limit_users_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_limit_users_count"
+            android:inputType="number"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toBottomOf="@+id/sw_limit_user"
+            app:layout_constraintStart_toStartOf="@id/sw_limit_user"
+            app:layout_constraintEnd_toEndOf="@id/sw_limit_user" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_limit_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/contentTextColor"
+            android:text="@string/title_limit_speed"
+            android:drawableStart="@drawable/ic_baseline_speed_24"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:layout_constraintTop_toBottomOf="@+id/et_limit_users_count"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_limit_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/sw_limit_speed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:textColor="@color/contentTextColor"
+                android:id="@+id/tv_upload"
+                android:text="@string/title_upload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:drawableStartCompat="@drawable/ic_baseline_backup_24" />
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/et_limit_speed_cir_upload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/hint_limit_speed_cir_upload"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintTop_toBottomOf="@id/tv_upload"
+                app:layout_constraintStart_toStartOf="@id/tv_upload"
+                app:layout_constraintEnd_toStartOf="@id/rg_limit_speed_cir_upload_unit"/>
+
+            <RadioGroup
+                android:id="@+id/rg_limit_speed_cir_upload_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/radio_b_cir_upload"
+                app:layout_constraintStart_toEndOf="@id/et_limit_speed_cir_upload"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/et_limit_speed_cir_upload"
+                app:layout_constraintBottom_toBottomOf="@id/et_limit_speed_cir_upload">
+                <RadioButton android:id="@+id/radio_b_cir_upload"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_byte" />
+                <RadioButton android:id="@+id/radio_kb_cir_upload"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_kilobyte" />
+                <RadioButton android:id="@+id/radio_mb_cir_upload"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:text="@string/title_short_megabyte" />
+            </RadioGroup>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/et_limit_speed_mir_upload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/hint_limit_speed_mir_upload"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintTop_toBottomOf="@id/et_limit_speed_cir_upload"
+                app:layout_constraintStart_toStartOf="@id/tv_upload"
+                app:layout_constraintEnd_toStartOf="@id/rg_limit_speed_mir_upload_unit"/>
+
+            <RadioGroup
+                android:id="@+id/rg_limit_speed_mir_upload_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/radio_b_mir_upload"
+                app:layout_constraintStart_toEndOf="@id/et_limit_speed_mir_upload"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/et_limit_speed_mir_upload"
+                app:layout_constraintBottom_toBottomOf="@id/et_limit_speed_mir_upload">
+                <RadioButton android:id="@+id/radio_b_mir_upload"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_byte" />
+                <RadioButton android:id="@+id/radio_kb_mir_upload"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_kilobyte" />
+                <RadioButton android:id="@+id/radio_mb_mir_upload"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:text="@string/title_short_megabyte" />
+            </RadioGroup>
+
+            <!-- -->
+
+            <TextView
+                android:textColor="@color/contentTextColor"
+                android:id="@+id/tv_download"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title_download"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintTop_toBottomOf="@+id/et_limit_speed_mir_upload"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:drawableStartCompat="@drawable/ic_baseline_cloud_download_24" />
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/et_limit_speed_cir_download"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/hint_limit_speed_cir_download"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintTop_toBottomOf="@id/tv_download"
+                app:layout_constraintStart_toStartOf="@id/tv_download"
+                app:layout_constraintEnd_toStartOf="@id/rg_limit_speed_cir_download_unit"/>
+
+            <RadioGroup
+                android:id="@+id/rg_limit_speed_cir_download_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/radio_b_cir_download"
+                app:layout_constraintStart_toEndOf="@id/et_limit_speed_cir_download"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/et_limit_speed_cir_download"
+                app:layout_constraintBottom_toBottomOf="@id/et_limit_speed_cir_download">
+                <RadioButton android:id="@+id/radio_b_cir_download"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_byte" />
+                <RadioButton android:id="@+id/radio_kb_cir_download"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_kilobyte" />
+                <RadioButton android:id="@+id/radio_mb_cir_download"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:text="@string/title_short_megabyte" />
+            </RadioGroup>
+
+            <EditText
+                style="@style/AppTheme.EditText"
+                android:id="@+id/et_limit_speed_mir_download"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/hint_limit_speed_mir_download"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintTop_toBottomOf="@id/et_limit_speed_cir_download"
+                app:layout_constraintStart_toStartOf="@id/tv_download"
+                app:layout_constraintEnd_toStartOf="@id/rg_limit_speed_mir_download_unit"/>
+
+            <RadioGroup
+                android:id="@+id/rg_limit_speed_mir_download_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/radio_b_mir_download"
+                app:layout_constraintStart_toEndOf="@id/et_limit_speed_mir_download"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/et_limit_speed_mir_download"
+                app:layout_constraintBottom_toBottomOf="@id/et_limit_speed_mir_download">
+                <RadioButton android:id="@+id/radio_b_mir_download"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_byte" />
+                <RadioButton android:id="@+id/radio_kb_mir_download"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_short_kilobyte" />
+                <RadioButton android:id="@+id/radio_mb_mir_download"
+                    style="@style/AppTheme.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:text="@string/title_short_megabyte" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            style="@style/AppTheme.EditText"
+            android:id="@+id/et_pool_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_pool_name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:minLines="1"
+            android:lines="1"
+            android:visibility="invisible"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            app:layout_constraintTop_toBottomOf="@+id/cl_limit_speed"
+            app:layout_constraintStart_toStartOf="@+id/et_profile"
+            app:layout_constraintEnd_toEndOf="@id/et_profile"
+            />
+
+        <Button
+            style="@style/AppTheme.Button"
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/title_save"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toBottomOf="@+id/et_pool_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

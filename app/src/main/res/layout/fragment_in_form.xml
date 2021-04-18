@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.invoice.INFormFragment">
+
+    <TextView
+        android:id="@+id/tv_title_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_type_customer"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@id/rg_paid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rg_paid"
+        app:layout_constraintBottom_toBottomOf="@id/rg_paid"/>
+
+    <RadioGroup
+        android:id="@+id/rg_paid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@id/radio_postpaid"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_title_type"
+        app:layout_constraintEnd_toEndOf="parent">
+        <RadioButton android:id="@+id/radio_prepaid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_prepaid" />
+        <RadioButton android:id="@+id/radio_postpaid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_postpaid" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_kind_customer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_kind_customer"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@id/rg_kind"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rg_kind"
+        app:layout_constraintBottom_toBottomOf="@id/rg_kind"/>
+
+    <RadioGroup
+        android:id="@+id/rg_kind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@id/radio_customer"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@id/rg_paid"
+        app:layout_constraintStart_toEndOf="@id/tv_kind_customer"
+        app:layout_constraintEnd_toEndOf="@id/rg_paid">
+
+        <RadioButton android:id="@+id/radio_reseller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_reseller" />
+
+        <RadioButton android:id="@+id/radio_customer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_customer" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/hint_name"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/rg_kind"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_type"
+        app:layout_constraintEnd_toEndOf="@id/rg_paid" />
+
+    <EditText
+        android:id="@+id/et_nominal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/hint_nominal"
+        app:layout_constraintTop_toBottomOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_type"
+        app:layout_constraintEnd_toEndOf="@id/rg_paid" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/title_save"
+        app:layout_constraintStart_toStartOf="@id/tv_title_type"
+        app:layout_constraintEnd_toEndOf="@id/rg_paid"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

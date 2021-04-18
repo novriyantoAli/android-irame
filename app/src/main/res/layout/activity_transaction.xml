@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.transaction.TransactionActivity">
+
+    <EditText
+        style="@style/AppTheme.EditText"
+        android:id="@+id/et_start"
+        android:hint="@string/title_date_start"
+        android:inputType="text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_search"
+        app:layout_constraintBottom_toTopOf="@+id/et_end"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"/>
+
+    <EditText
+        style="@style/AppTheme.EditText"
+        android:id="@+id/et_end"
+        android:hint="@string/title_date_end"
+        android:inputType="text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_start"
+        app:layout_constraintEnd_toStartOf="@+id/btn_search"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"/>
+
+    <Button
+        style="@style/AppTheme.Button"
+        android:id="@+id/btn_search"
+        android:text="@string/title_search"
+        android:textAllCaps="false"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/et_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/et_end"
+        android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_title_in"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_transaction_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_end"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_value_in"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_in"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_in"
+        />
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_title_out"
+        android:text="@string/title_transaction_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_in"
+        app:layout_constraintEnd_toEndOf="@id/tv_title_in"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_in"/>
+
+    <TextView
+        style="@style/AppTheme.TextView"
+        android:id="@+id/tv_value_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_out"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_out"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_out"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ExpandableListView
+        android:id="@+id/elv_content"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_value_out"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

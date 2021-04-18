@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_radius">
+
+    <fragment
+        android:id="@+id/navigation_radius"
+        android:name="co.id.digital.insinyur.irame.ui.radius.RadiusFragment"
+        android:label="@string/title_radius"
+        tools:layout="@layout/fragment_radius" />
+
+    <fragment
+        android:id="@+id/navigation_finance"
+        android:name="co.id.digital.insinyur.irame.ui.finance.FinanceFragment"
+        android:label="@string/title_finance"
+        tools:layout="@layout/fragment_finance" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="co.id.digital.insinyur.irame.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
+</navigation>

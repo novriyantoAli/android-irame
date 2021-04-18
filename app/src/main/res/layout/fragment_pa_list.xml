@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.payment.PAListFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:textColor="@color/contentTextColor"
+                app:selectedItem_textColor="@color/colorAccent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/date_picker_timeline">
+            </com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_marginTop="@dimen/normalPadding"
+                android:layout_width="0dp"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/date_picker_timeline"
+                app:layout_constraintStart_toStartOf="@id/date_picker_timeline"
+                app:layout_constraintTop_toBottomOf="@+id/date_picker_timeline" />
+
+            <TextView
+                style="@style/AppTheme.TextView"
+                android:id="@+id/tv_title_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title_payment_list"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintStart_toStartOf="@id/date_picker_timeline"
+                app:layout_constraintTop_toBottomOf="@id/view_pager"
+                app:layout_constraintEnd_toEndOf="@+id/date_picker_timeline" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_status"
+                app:layout_constraintStart_toStartOf="@id/date_picker_timeline"
+                app:layout_constraintEnd_toEndOf="@id/date_picker_timeline"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
